@@ -1,0 +1,32 @@
+
+.library {
+	width: 100%;
+   display: flex;
+   flex-direction: row;
+   flex-wrap: wrap;
+   gap: 1rem;
+	justify-content: center;
+}
+
+.book-card {
+	padding: 2rem 1rem 0.5rem 1.5rem;
+   border: 2px solid grey;
+   border-radius: 8px;
+   min-width: 20ch;
+	position: relative;
+}
+.book-title {
+   margin: 0;
+}
+.book-author {
+   margin: 0 0 0.4rem;
+}
+.book-pages, .book-year {
+	margin: 0;
+	font-size: 80%;
+	opacity: 60%;
+}
+.book-status {
+	text-align: right;
+	height: 1.5rem;
+}
