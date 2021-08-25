@@ -1,4 +1,13 @@
 
+.new-book-form {
+	display: flex;
+	flex-direction: column;
+	user-select: none;
+}
+
+
+
+
 .library {
 	width: 100%;
    display: flex;

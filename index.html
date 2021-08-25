@@ -11,6 +11,15 @@
 
 <body>
 	<h1>Logan's Library</h1>
+	<button id="add-book">Add Another Title</button>
+	<div class="new-book-form">
+		<label for="new-title"></label><input type="text" id="new-title" name="title" placeholder="Title">
+		<label for="new-author"></label><input type="text" id="new-author" name="author" placeholder="Author">
+		<label for="new-pages"></label><input type="number" id="new-pages" name="pages" placeholder="29" pattern="[0-9]+">
+		<label for="new-year"></label><input type="number" id="new-year" name="year" placeholder="Published (year)" pattern="[0-9]+">
+		<label for="new-status">Book has been read<input type="checkbox" name="status" id="new-status"></label>
+		<input type="submit" value="Create New Entry">
+	</div>
 	<div class="library"></div>
 </body>
 <script src="./script.js"></script>
