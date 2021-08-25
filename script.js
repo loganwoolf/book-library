@@ -68,10 +68,10 @@ function displayBooks() {
 		const read = document.createElement('div')
 		read.classList.add('book-status')
 		if (book.status) {
-			read.textContent = '📘'
+			read.textContent = '✅'
 		}
 		card.appendChild(read)
 	}
 }
 
-window.onload(displayBooks())
+displayBooks()
