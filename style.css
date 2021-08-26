@@ -1,15 +1,30 @@
 
 .new-book-form {
+	margin: 1rem;
 	display: flex;
 	flex-direction: column;
+	align-items: flex-start;
 	user-select: none;
+	overflow: hidden;
+	height: 19rem; /*must be finite value, not auto or max */
+	opacity: 100%;
+	transition: all 0.3s cubic-bezier(.77,.06,.16,.62)
 }
+.new-book-form > input {
+	margin: 0.3rem 0 0.7rem;
+}
+
 .hidden {
+	height: 0rem;
+	opacity: 0%;
+}
+#new-status {
 	display: none;
 }
-
-
-
+#new-status-label {
+	padding: 0.3rem 0.2rem 0.3rem 0;
+	cursor: pointer;
+}
 .library {
 	width: 100%;
    display: flex;
@@ -46,7 +61,6 @@
 	background: unset;
 	border: unset;
 }
-
 .book-card-icons > button {
 	padding: 0.4rem 0.5rem;
 	margin-top: 0.2rem;
