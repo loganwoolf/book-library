@@ -1,4 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Source+Sans+Pro&display=swap');
+/*
+font-family: 'Merriweather', serif;
+font-family: 'Source Sans Pro', sans-serif;
+*/
 
+h1,h2,h3,h4,h5,h6 {
+	font-family: 'Merriweather', serif;
+}
+p,button,label{
+	font-family: 'Source Sans Pro', sans-serif;
+}
 .new-book-form {
 	margin: 1rem;
 	display: flex;
