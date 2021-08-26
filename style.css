@@ -10,30 +10,78 @@ h1,h2,h3,h4,h5,h6 {
 p,button,label{
 	font-family: 'Source Sans Pro', sans-serif;
 }
+
+header {
+	text-align: center;
+	user-select: none;
+}
+
+.sticky {
+	position: sticky;
+	top: 0;
+	background: white;
+	z-index: 5;
+}
+#add-book {
+	width: 100%;
+	background: darkseagreen;
+	padding: 0.7rem;
+	border: 2px solid grey;
+	font-weight: 800;
+	color: white;
+	font-size: 1rem;
+	cursor: pointer;
+}
 .new-book-form {
-	margin: 1rem;
+	background: lightgrey;
+	border-left: 2px solid grey;
+	border-bottom: 2px solid grey;
+	border-right: 2px solid grey;
+	padding: 1rem;
 	display: flex;
 	flex-direction: column;
-	align-items: flex-start;
+	align-items: center;
+	gap: 0.7rem;
 	user-select: none;
 	overflow: hidden;
-	height: 19rem; /*must be finite value, not auto or max */
-	opacity: 100%;
-	transition: all 0.3s cubic-bezier(.77,.06,.16,.62)
+	height: 15rem; /*Needs media query*/ /*must be finite value, not auto or max */
+	transition: all 0.4s ease-in-out;
+	margin-bottom: 1rem;
+}
+.new-book-form > div {
+	display: grid;
+	grid-template-columns: 1fr 3fr;
+	justify-content: space-between;
+	width: 100%;
 }
 .new-book-form > input {
 	margin: 0.3rem 0 0.7rem;
 }
-
+#new-book-submit {
+	background: darkseagreen;
+	padding: 0.7rem;
+	border: 2px solid grey;
+	font-weight: 500;
+	color: white;
+	font-size: 1rem;
+	transition: all 0.08s linear;
+	cursor: pointer;
+}
+#new-book-submit:hover {
+	box-shadow: 0 0 1rem white;
+	opacity: 80%;
+	transform: scale(1.05);
+}
 .hidden {
 	height: 0rem;
-	opacity: 0%;
+	padding-top: 0;
+	padding-bottom: 0;
+	border-bottom: none;
 }
 #new-status {
 	display: none;
 }
 #new-status-label {
-	padding: 0.3rem 0.2rem 0.3rem 0;
 	cursor: pointer;
 }
 .library {
@@ -75,6 +123,7 @@ p,button,label{
 .book-card-icons > button {
 	padding: 0.4rem 0.5rem;
 	margin-top: 0.2rem;
+	cursor: pointer;
 }
 .button__delete {
 	background: unset;
