@@ -39,10 +39,12 @@ addBookToLibrary('Bird Box', 'Josh Malerman', 262, 2014)
 
 const library = document.querySelector('.library')
 
+
 function displayBooks() {
-	for (let book of bookLibrary) {
+	bookLibrary.forEach( (book, i) =>  {
 		const card = document.createElement('div')
 		card.classList.add('book-card')
+		card.setAttribute('data-book-id', i)
 		library.appendChild(card)
 
 		const title = document.createElement('h3')
@@ -82,7 +84,7 @@ function displayBooks() {
 		deleteBook.classList.add('button__delete')
 		deleteBook.textContent = '❌'
 		icons.appendChild(deleteBook)
-	}
+	})
 }
 
 displayBooks()
@@ -94,6 +96,7 @@ function toggleForm(e) {
 }
 addBookButton.addEventListener('click', toggleForm)
 
+//toggle label on read status checkbox on add book form
 const addBookStatus = document.querySelector('#new-status')
 const addBookStatusLabel = document.querySelector('#new-status-label')
 function toggleCheckboxIcon(e) {
@@ -102,3 +105,4 @@ function toggleCheckboxIcon(e) {
 		addBookStatusLabel.textContent = `📗 Unread`
 }
 addBookStatus.addEventListener('change', toggleCheckboxIcon)
+
