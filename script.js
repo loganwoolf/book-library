@@ -1,3 +1,12 @@
+/*TO DO*/
+
+/*
+enable adding new books
+enable localStorage
+
+*/
+
+
 let bookLibrary = []
 
 class Book {
@@ -9,7 +18,7 @@ class Book {
 		this.status = status
    }
    // functions below get added to prototype
-   print() {
+   print() { // not used by anything
 		if (this.status) {
 			let readStatement = 'have'
 		} else {
@@ -36,15 +45,19 @@ function addBookToLibrary(title, author, pages, year, status) {
    return book
 }
 
+//pre loaded books in library
 addBookToLibrary("The Lost Colony", 'A. G. Riddle', 380, 2019, false)
 addBookToLibrary("Shards of Earth", 'Adrian Tchaikovsky', 560, 2021, true)
 addBookToLibrary("A Modest Proposal", 'Jonathan Swift', 48, 1729, false)
 addBookToLibrary('Bird Box', 'Josh Malerman', 262, 2014, false)
 
-const library = document.querySelector('.library')
-
+const bodyElement = document.querySelector('body')
 
 function displayBooks() {
+	const library = document.createElement('div')
+	library.classList.add('library')
+	bodyElement.appendChild(library)
+
 	bookLibrary.forEach( (book, i) =>  {
 		const card = document.createElement('div')
 		card.classList.add('book-card')
@@ -100,7 +113,7 @@ function toggleForm(e) {
 }
 addBookButton.addEventListener('click', toggleForm)
 
-//toggle label on read status checkbox on add book form
+//toggle textcontent on label of read status checkbox in add book form
 const addBookStatus = document.querySelector('#new-status')
 const addBookStatusLabel = document.querySelector('#new-status-label')
 function toggleCheckboxIcon(e) {
@@ -110,9 +123,19 @@ function toggleCheckboxIcon(e) {
 }
 addBookStatus.addEventListener('change', toggleCheckboxIcon)
 
-//change book read status when clicking on icon in card
-const readIcons = document.querySelectorAll('.book-status');
+// global event listener on body
+bodyElement.addEventListener('click', e => {
+	//read status toggle
+	if (e.target.className === 'book-status') {
+		triggerToggleReadStatus(e);
+	}
+	//delete book
+	if (e.target.className === 'button__delete') {
+		triggerDeleteBook(e)
+	}
+})
 
+//change book read status when clicking on icon in card
 function triggerToggleReadStatus(e) {
 	const bookId = e.target.parentElement.parentElement.dataset.bookId
 	bookLibrary[bookId].toggleReadStatus()
@@ -123,10 +146,13 @@ function triggerToggleReadStatus(e) {
 	}
 }
 
-readIcons.forEach(icon => icon.addEventListener('click', triggerToggleReadStatus) )
-
-
 //delete book card and entry when clicking on delete icon
-
-
-
+function triggerDeleteBook(e) {
+	const bookId = e.target.parentElement.parentElement.dataset.bookId
+	//const confirmation = confirm(`Are you sure you want to remove \n\n${bookLibrary[bookId].title}\n\n from the library?`)
+	console.log(`delete book ${+bookId}`);
+	bookLibrary.splice(bookId, 1)
+	console.log(bookLibrary);
+	document.querySelector('.library').remove()
+	displayBooks()
+}
