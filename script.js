@@ -86,3 +86,10 @@ function displayBooks() {
 }
 
 displayBooks()
+
+//toggle add book form on click
+const addBookButton = document.querySelector('#add-book')
+function toggleForm(e) {
+	e.target.nextElementSibling.classList.toggle('hidden')
+}
+addBookButton.addEventListener('click', toggleForm)
