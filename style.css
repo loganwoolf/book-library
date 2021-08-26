@@ -35,7 +35,26 @@
 	font-size: 80%;
 	opacity: 60%;
 }
+.book-card-icons {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
 .book-status {
-	text-align: right;
-	height: 1.5rem;
+	background: unset;
+	border: unset;
+}
+
+.book-card-icons > button {
+	padding: 0.4rem 0.5rem;
+	margin-top: 0.2rem;
+}
+.button__delete {
+	background: unset;
+	border: unset;
+	opacity: 40%;
+}
+.book-card-icons >button:hover{
+	opacity: 100%;
+	outline: 2px solid hsla(0, 0%, 0%, 5%)
 }

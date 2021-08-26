@@ -65,12 +65,23 @@ function displayBooks() {
 		year.textContent = `Published in ${book.year}`
 		card.appendChild(year)
 
-		const read = document.createElement('div')
+		const icons = document.createElement('div')
+		icons.classList.add('book-card-icons')
+		card.appendChild(icons)
+
+		const read = document.createElement('button')
 		read.classList.add('book-status')
 		if (book.status) {
 			read.textContent = '✅'
+		} else {
+			read.textContent = '📗'
 		}
-		card.appendChild(read)
+		icons.appendChild(read)
+
+		const deleteBook = document.createElement('button')
+		deleteBook.classList.add('button__delete')
+		deleteBook.textContent = '❌'
+		icons.appendChild(deleteBook)
 	}
 }
 
