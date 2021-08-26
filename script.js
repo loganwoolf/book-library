@@ -93,3 +93,12 @@ function toggleForm(e) {
 	e.target.nextElementSibling.classList.toggle('hidden')
 }
 addBookButton.addEventListener('click', toggleForm)
+
+const addBookStatus = document.querySelector('#new-status')
+const addBookStatusLabel = document.querySelector('#new-status-label')
+function toggleCheckboxIcon(e) {
+	e.target.checked ?
+		addBookStatusLabel.textContent = `✅ Read` :
+		addBookStatusLabel.textContent = `📗 Unread`
+}
+addBookStatus.addEventListener('change', toggleCheckboxIcon)
