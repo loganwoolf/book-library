@@ -13,11 +13,11 @@
 	<h1>Logan's Library</h1>
 	<button id="add-book">Add Another Title</button>
 	<div class="new-book-form hidden">
-		<label for="new-title"></label><input type="text" id="new-title" name="title" placeholder="Title">
-		<label for="new-author"></label><input type="text" id="new-author" name="author" placeholder="Author">
-		<label for="new-pages"></label><input type="number" id="new-pages" name="pages" placeholder="29" pattern="[0-9]+">
-		<label for="new-year"></label><input type="number" id="new-year" name="year" placeholder="Published (year)" pattern="[0-9]+">
-		<label for="new-status">Book has been read<input type="checkbox" name="status" id="new-status"></label>
+		<label for="new-title">Title</label><input type="text" id="new-title" name="title" placeholder="Title">
+		<label for="new-author">Author</label><input type="text" id="new-author" name="author" placeholder="Author">
+		<label for="new-pages">Length (pages)</label><input type="number" id="new-pages" name="pages" placeholder="356" pattern="[0-9]+">
+		<label for="new-year">Published (year)</label><input type="number" id="new-year" name="year" placeholder="2018" pattern="[0-9]+">
+		<label id="new-status-label" for="new-status">✅ Read</label><input type="checkbox" checked="true"name="status" id="new-status">
 		<input type="submit" value="Create New Entry">
 	</div>
 	<div class="library"></div>
