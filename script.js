@@ -18,6 +18,10 @@ class Book {
       return `'${this.title}' by ${this.author} is ${this.pages} long. It was published in ${this.year}, and I ${readStatement} read it.`
    }
 
+	toggleReadStatus() {
+		this.status !== true ? this.status = true : this.status = false
+	}
+
 }
 
 function addBookToLibrary(title, author, pages, year, status) {
@@ -32,10 +36,10 @@ function addBookToLibrary(title, author, pages, year, status) {
    return book
 }
 
-addBookToLibrary("The Lost Colony", 'A. G. Riddle', 380, 2019)
+addBookToLibrary("The Lost Colony", 'A. G. Riddle', 380, 2019, false)
 addBookToLibrary("Shards of Earth", 'Adrian Tchaikovsky', 560, 2021, true)
-addBookToLibrary("A Modest Proposal", 'Jonathan Swift', 48, 1729)
-addBookToLibrary('Bird Box', 'Josh Malerman', 262, 2014)
+addBookToLibrary("A Modest Proposal", 'Jonathan Swift', 48, 1729, false)
+addBookToLibrary('Bird Box', 'Josh Malerman', 262, 2014, false)
 
 const library = document.querySelector('.library')
 
@@ -105,4 +109,24 @@ function toggleCheckboxIcon(e) {
 		addBookStatusLabel.textContent = `📗 Unread`
 }
 addBookStatus.addEventListener('change', toggleCheckboxIcon)
+
+//change book read status when clicking on icon in card
+const readIcons = document.querySelectorAll('.book-status');
+
+function triggerToggleReadStatus(e) {
+	const bookId = e.target.parentElement.parentElement.dataset.bookId
+	bookLibrary[bookId].toggleReadStatus()
+	if (bookLibrary[bookId].status) {
+		e.target.textContent = '✅'
+	} else {
+		e.target.textContent = '📗'
+	}
+}
+
+readIcons.forEach(icon => icon.addEventListener('click', triggerToggleReadStatus) )
+
+
+//delete book card and entry when clicking on delete icon
+
+
 
