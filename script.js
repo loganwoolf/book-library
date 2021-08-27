@@ -51,7 +51,7 @@ addBookToLibrary("Shards of Earth", 'Adrian Tchaikovsky', 560, 2021, true)
 addBookToLibrary("A Modest Proposal", 'Jonathan Swift', 48, 1729, false)
 addBookToLibrary('Bird Box', 'Josh Malerman', 262, 2014, false)
 
-const bodyElement = document.querySelector('body')
+const jsTarget = document.querySelector('.js-target')
 
 function displayBooks() {
 	if (document.querySelector('.library')) {
@@ -60,7 +60,7 @@ function displayBooks() {
 
 	const library = document.createElement('div')
 	library.classList.add('library')
-	bodyElement.appendChild(library)
+	jsTarget.appendChild(library)
 
 	bookLibrary.forEach( (book, i) =>  {
 		const card = document.createElement('div')
@@ -128,7 +128,7 @@ function toggleCheckboxIcon(e) {
 addBookStatus.addEventListener('change', toggleCheckboxIcon)
 
 // global event listener on body
-bodyElement.addEventListener('click', e => {
+jsTarget.addEventListener('click', e => {
 	//read status toggle
 	if (e.target.className === 'book-status') {
 		triggerToggleReadStatus(e);
