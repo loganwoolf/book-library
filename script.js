@@ -153,10 +153,36 @@ function triggerToggleReadStatus(e) {
 //delete book card and entry when clicking on delete icon
 function triggerDeleteBook(e) {
 	const bookId = e.target.parentElement.parentElement.dataset.bookId
-	//const confirmation = confirm(`Are you sure you want to remove \n\n${bookLibrary[bookId].title}\n\n from the library?`)
-	console.log(`delete book ${+bookId}`);
 	bookLibrary.splice(bookId, 1)
-	console.log(bookLibrary);
-	
+
 	displayBooks()
 }
+
+//create new book from form
+const newBookForm = document.querySelector('.new-book-form')
+
+function createNewBook(e) {
+	e.preventDefault() // prevents page from reloading
+	const newTitle = document.querySelector('#new-title').value
+	const newAuthor = document.querySelector('#new-author').value
+	const newPages = document.querySelector('#new-pages').value
+	const newYear = document.querySelector('#new-year').value
+	const newStatus = document.querySelector('#new-status').checked
+
+	const newBook = new Book(newTitle, newAuthor, newPages, newYear, newStatus)
+	bookLibrary.unshift(newBook)
+
+	displayBooks()
+	resetForm()
+}
+
+//reset form
+function resetForm() {
+	document.querySelector('#new-title').value = ''
+	document.querySelector('#new-author').value = ''
+	document.querySelector('#new-pages').value = ''
+	document.querySelector('#new-year').value = ''
+	document.querySelector('#new-status').checked = true
+}
+
+newBookForm.addEventListener('submit', createNewBook)
