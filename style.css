@@ -11,9 +11,24 @@ p,button,label{
 	font-family: 'Source Sans Pro', sans-serif;
 }
 
+body {
+	margin: 0;
+	background-color: lightgrey;
+}
+
 header {
-	text-align: center;
+	background: url(./images/old-books-436498_1280.jpg) center / cover no-repeat;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
 	user-select: none;
+	margin-bottom: 1rem;
+}
+header > h1 {
+	margin: 2rem;
+	padding: 0.4rem 1.6rem;
+	opacity: 75%;
+	background-color: lightgrey;
 }
 
 .sticky {
@@ -21,10 +36,12 @@ header {
 	top: 0;
 	background: white;
 	z-index: 5;
+	width: 375px;
+	margin: 0 auto;
 }
 #add-book {
 	width: 100%;
-	background: darkseagreen;
+	background: olivedrab;
 	padding: 0.7rem;
 	border: 2px solid grey;
 	font-weight: 800;
@@ -33,7 +50,7 @@ header {
 	cursor: pointer;
 }
 .new-book-form {
-	background: lightgrey;
+	background: white;
 	border-left: 2px solid grey;
 	border-bottom: 2px solid grey;
 	border-right: 2px solid grey;
@@ -44,21 +61,28 @@ header {
 	gap: 0.7rem;
 	user-select: none;
 	overflow: hidden;
-	height: 15rem; /*Needs media query*/ /*must be finite value, not auto or max */
+	height: 18rem; /*Needs media query*/ /*must be finite value, not auto or max */
 	transition: all 0.4s ease-in-out;
 	margin-bottom: 1rem;
 }
 .new-book-form > div {
 	display: grid;
-	grid-template-columns: 1fr 3fr;
+	grid-template-columns: 2fr 3fr;
 	justify-content: space-between;
+	align-items: center;
 	width: 100%;
 }
 .new-book-form > input {
 	margin: 0.3rem 0 0.7rem;
 }
+.new-book-form input[type=text], .new-book-form input[type=number] {
+	height: 2rem;
+	font-size: 1rem;
+	border-radius: none;
+	border: 2px solid grey
+}
 #new-book-submit {
-	background: darkseagreen;
+	background: olivedrab;
 	padding: 0.7rem;
 	border: 2px solid grey;
 	font-weight: 500;
@@ -96,9 +120,14 @@ header {
 .book-card {
 	padding: 2rem 1rem 0.5rem 1.5rem;
    border: 2px solid grey;
-   border-radius: 8px;
+   /* border-radius: 8px; */
    min-width: 20ch;
 	position: relative;
+	background: white;
+	transition: transform 0.08s ease-in-out;
+}
+.book-card:hover {
+	transform: scale(1.01);
 }
 .book-title {
    margin: 0;
