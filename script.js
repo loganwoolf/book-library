@@ -54,6 +54,10 @@ addBookToLibrary('Bird Box', 'Josh Malerman', 262, 2014, false)
 const bodyElement = document.querySelector('body')
 
 function displayBooks() {
+	if (document.querySelector('.library')) {
+		document.querySelector('.library').remove()
+	}
+
 	const library = document.createElement('div')
 	library.classList.add('library')
 	bodyElement.appendChild(library)
@@ -153,6 +157,6 @@ function triggerDeleteBook(e) {
 	console.log(`delete book ${+bookId}`);
 	bookLibrary.splice(bookId, 1)
 	console.log(bookLibrary);
-	document.querySelector('.library').remove()
+	
 	displayBooks()
 }
