@@ -48,8 +48,16 @@ function addBookToLibrary(title, author, pages, year, status) {
 //pre loaded books in library
 addBookToLibrary("The Lost Colony", 'A. G. Riddle', 380, 2019, false)
 addBookToLibrary("Shards of Earth", 'Adrian Tchaikovsky', 560, 2021, true)
-addBookToLibrary("A Modest Proposal", 'Jonathan Swift', 48, 1729, false)
 addBookToLibrary('Bird Box', 'Josh Malerman', 262, 2014, false)
+addBookToLibrary('The Persecution and Assassination of Jean-Paul Marat as Performed by the Inmates of the Asylum of Charenton Under the Direction of the Marquis de Sade', 'Peter Weiss', 128, 1963, true)
+addBookToLibrary('A Psalm for the Wild-Built', 'Becky Chambers', 160, 2021, true)
+addBookToLibrary('Good Omens: The Nice and Accurate Prophecies of Agnes Nutter, Witch', 'Terry Pratchett', 491, 1990, false)
+addBookToLibrary('The Midnight Library', 'Matt Haig', 304, 2020, false)
+addBookToLibrary("Sprinting Through No Man's Land: Endurance, Tragedy, and Rebirth in the 1919 Tour de France", 'Adin Dobkin', 316, 2021, true)
+addBookToLibrary('Two Spies in Caracas', 'Moisés Naím', 347, 2019, false)
+addBookToLibrary('All Quiet on the Western Front', 'Erich Maria Remarque', 296, 1929, true)
+addBookToLibrary("A Modest Proposal", 'Jonathan Swift', 48, 1729, false)
+addBookToLibrary('The Trigger: Hunting the Assassin Who Brought the World to War', 'Tim Butcher', 352, 2014, false)
 
 const jsTarget = document.querySelector('.js-target')
 
