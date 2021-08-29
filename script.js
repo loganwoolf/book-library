@@ -77,8 +77,14 @@ function displayBooks() {
 		library.appendChild(card)
 
 		const title = document.createElement('h3')
+		const maxLength = 72
 		title.classList.add('book-title')
-		title.textContent = book.title
+		if (book.title.length > maxLength) {
+			title.classList.add('small-title')
+			title.textContent = book.title.slice(0, maxLength).concat('...')
+		} else {
+			title.textContent = book.title
+		}
 		card.appendChild(title)
 
 		const author = document.createElement('p')
