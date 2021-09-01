@@ -19,12 +19,11 @@ class Book {
    }
    // functions below get added to prototype
    print() { // not used by anything
-		if (this.status) {
-			let readStatement = 'have'
-		} else {
-			let readStatement = 'have not yet'
+		let readStatement = ''
+		if (!this.status) {
+			readStatement = ' not yet'
 		}
-      return `'${this.title}' by ${this.author} is ${this.pages} long. It was published in ${this.year}, and I ${readStatement} read it.`
+      return `'${this.title}' by ${this.author} is ${this.pages} pages long. It was published in ${this.year}, and I have${readStatement} read it.`
    }
 
 	toggleReadStatus() {
