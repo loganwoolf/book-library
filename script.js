@@ -75,7 +75,7 @@ function displayBooks() {
 		title.classList.add('book-title')
 		if (book.title.length > maxLength) {
 			title.classList.add('small-title')
-			title.textContent = book.title.slice(0, maxLength).concat('...')
+			title.textContent = book.title.slice(0, maxLength).trim().concat('...')
 		} else {
 			title.textContent = book.title
 		}

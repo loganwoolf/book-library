@@ -13,6 +13,7 @@ p,button,label{
 }
 
 body {
+	font-size: 18px;
 	margin: 0;
 	background-color: lightgrey;
 }
@@ -68,7 +69,7 @@ header > h1 {
 }
 .new-book-form > div {
 	display: grid;
-	grid-template-columns: 2fr 3fr;
+	grid-template-columns: 2fr 4fr;
 	justify-content: space-between;
 	align-items: center;
 	width: 100%;
@@ -121,11 +122,11 @@ header > h1 {
 .book-card {
 	display: flex;
 	flex-direction: column;
-	padding: 2rem 1rem 0.5rem 1.5rem;
+	padding: 2rem 1rem 0.5rem 1rem;
    border: 2px solid grey;
    /* border-radius: 8px; */
-   width: 20ch;
-	height: 18ch;
+   width: 15rem;
+	min-height: 13rem;
 	background: white;
 	transition: transform 0.08s ease-in-out;
 }
@@ -136,7 +137,7 @@ header > h1 {
    margin: 0;
 }
 .small-title {
-	font-size: 1.05rem;
+	font-size: 1.3rem;
 }
 .book-author {
    margin: 0 0 0.4rem;
