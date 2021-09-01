@@ -161,13 +161,14 @@ function triggerToggleReadStatus(e) {
 	} else {
 		e.target.textContent = '📗'
 	}
+	setLocalStorage()
 }
 
 //delete book card and entry when clicking on delete icon
 function triggerDeleteBook(e) {
 	const bookId = e.target.parentElement.parentElement.dataset.bookId
 	bookLibrary.splice(bookId, 1)
-
+	setLocalStorage()
 	displayBooks()
 }
 
@@ -184,7 +185,7 @@ function createNewBook(e) {
 
 	const newBook = new Book(newTitle, newAuthor, newPages, newYear, newStatus)
 	bookLibrary.unshift(newBook)
-
+	setLocalStorage()
 	displayBooks()
 	resetForm()
 }
@@ -199,3 +200,17 @@ function resetForm() {
 }
 
 newBookForm.addEventListener('submit', createNewBook)
+
+function setLocalStorage() {
+	const bookObjectSerialized = JSON.stringify(bookLibrary)
+	localStorage.setItem('libraryObject', bookObjectSerialized)
+}
+
+function getLocalStorage() {
+	const bookObjectDeserialized = JSON.parse(localStorage.getItem('libraryObject'))
+	bookObjectDeserialized.forEach(book => {
+		addBookToLibrary(book.title, book.author, book.pages, book.year, book.status)
+	})
+	displayBooks()
+}
+
